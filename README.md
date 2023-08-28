@@ -13,7 +13,9 @@ Something about this project
 - TODO
 - Collored CLI printing
 
-<pre><code>$ ./src/sync.py # SAMPLE OUTPUT MESSAGES
+<pre>
+<code>
+$ ./src/sync.py # SAMPLE OUTPUT MESSAGES
 <span style="color:blue">[ CREATE ]</span> ENTITY PATH
 <span style="color:green">[ COPY   ]</span> ENTITY PATH TO DEST_PATH
 <span style="color:#aeb32e">[ UPDATE ]</span> ENTITY PATH
@@ -21,7 +23,8 @@ Something about this project
 <span style="color:#ff834e">[ WARN   ]</span> ENTITY WARNING_MESSAGE
 <span style="color:red">[ ERROR  ]</span> ENTITY ERROR_MESSAGE
 [ SYNCH  ]
-</code></pre>
+</code>
+</pre>
 
 ## Table of Contents
 
