@@ -7,6 +7,10 @@
 
 This project provides a simple differential backup tool written in Python. The tool performs one-way synchronization from a source directory to a replica directory, ensuring that the replica is an exact copy of the source. It is designed to handle various scenarios, such as new files in the source directory, modified files, and deleted files. The tool provides colored output messages in the command line interface (CLI), logs all operations to a log file, and can be configured to perform synchronization periodically at a specified time interval.
 
+This project uses Python standard library modules only and doesn't rely on any third party libraries. I chose `argparse` for parsing command-line options and arguments. Library `filecmp` is the key module, used for file and directory comparisons. A comparison objects returned by calling `filecmp.dircmp(srcDir, dstDir)` is used to determine which files need to be copied, updated, or deleted. 
+
+Python 3.10 or newer is required, as the code uses a `match-case` statement. It can however easily be refactored to use loner `if-elif-else` statement instead.
+
 ## Table of Contents
 
 - [Features](#features)
