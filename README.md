@@ -40,22 +40,22 @@ This project provides a simple differential backup tool written in Python. The t
 
 1. Clone this repository and move into it. No third-party libraries required!
 
-```bash
-git clone git@github.com:nierja/sync.git
-cd sync
-```
+   ```bash
+   git clone git@github.com:nierja/sync.git
+   cd sync
+   ```
 
 2. Run unittests to make sure everything works.
 
-```bash
-python -m unittest tests/test_sync.py
-```
+   ```bash
+   python -m unittest tests/test_sync.py
+   ```
 
-    This repository already contains a source directory `tests/sourceDir/` for testing purposes. Feel free to try making a backup for this defout directory by running
+    This repository already contains a source directory `tests/sourceDir/` for testing purposes. Feel free to play around and try making a backup for this default directory by running
 
-```bash
-python src/sync.py
-```
+   ```bash
+   python src/sync.py
+   ```
 
 ## Usage
 
