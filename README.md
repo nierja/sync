@@ -5,17 +5,22 @@
 
 ## Overview
 
-Something about this project
+This project provides a simple differential backup tool written in Python. The tool performs one-way synchronization from a source directory to a replica directory, ensuring that the replica is an exact copy of the source. It is designed to handle various scenarios, such as new files in the source directory, modified files, and deleted files. The tool provides colored output messages in the command line interface (CLI), logs all operations to a log file, and can be configured to perform synchronization periodically at a specified time interval.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ## Features
 
-- TODO 
-- TODO
-- Collored CLI printing
+- Differential backup: This tool performs one-way synchronization from a source directory to a replica directory. It ensures that the replica directory is an exact copy of the source by copying new files, updating modified files, and deleting files that no longer exist in the source directory. This way we save resources by avoiding rewriting the whole replica directory every time.
+- Periodic synchronization: The tool can be configured to perform synchronization periodically at a specified time interval.
+- Logging: All operations performed during the backup are logged into a log file. The log file includes timestamps and details about each operation.
+- Colored CLI output: Different types of operations (e.g., copy, update, delete, warning, error) are printed in different color to make it easier to know what is happening (and how to debbug runtime errors).
 
 <img src="./tests/sourceDir/screenshot2.png" alt="Sample colored output" width="600px"/>
-
-![Sample colored output](/tests/sourceDir/screenshot2.png)
 
 <!---
  <pre>
@@ -30,35 +35,45 @@ Something about this project
  </pre>
 -->
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
 
 ## Installation
 
-TODO
+1. Clone this repository and move into it. No third-party libraries required!
+
+```bash
+git clone git@github.com:nierja/sync.git
+cd sync
+```
+
+2. Run unittests to make sure everything works.
+
+```bash
+python -m unittest tests/test_sync.py
+```
+
+    This repository already contains a source directory `tests/sourceDir/` for testing purposes. Feel free to try making a backup for this defout directory by running
+
+```bash
+python src/sync.py
+```
 
 ## Usage
 
-
+The `sync.py` script uses CLI arguments to customize its behavior. You can display the list of CLI arguments by running:
 
 ```shell
-$ ./sync.py --help
-usage: ./sync.py [-h] [--source SOURCE] [--replica REPLICA] 
-                 [--logDir LOGDIR] [--logFileName LOGFILENAME] 
-                 [--syncPeriod SYNCPERIOD]
+$ python src/sync.py --help
+usage: sync.py [-h] [--source SOURCE] [--replica REPLICA] [--logDir LOGDIR]
+               [--logFileName LOGFILENAME] [--syncPeriod SYNCPERIOD]
 
 options:
   -h, --help            show this help message and exit
-  --source SOURCE       Path to the source directory to be 
-                        mirrored
-  --replica REPLICA     Pyth to the copy of the source directory
+  --source SOURCE       Path to the source directory to be mirrored
+  --replica REPLICA     Destinaton path of the backup (replica) directory
   --logDir LOGDIR       Directory where to store the log file
   --logFileName LOGFILENAME
                         Name of the log file
   --syncPeriod SYNCPERIOD
-                        Time interval in seconds between 
-                        periodic synchronizations
+                        Time interval in seconds between periodic synchronizations
+                        (backups)
 ```
