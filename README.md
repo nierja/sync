@@ -7,7 +7,7 @@
 
 This project provides a simple differential backup tool written in Python. The tool performs one-way synchronization from a source directory to a replica directory, ensuring that the replica is an exact copy of the source. It is designed to handle various scenarios, such as new files in the source directory, modified files, and deleted files. The tool provides colored output messages in the command line interface (CLI), logs all operations to a log file, and can be configured to perform synchronization periodically at a specified time interval.
 
-This project uses Python standard library modules only and doesn't rely on any third party libraries. I chose `argparse` for parsing command-line options and arguments. Library `filecmp` is the key module, used for file and directory comparisons. A comparison objects returned by calling `filecmp.dircmp(srcDir, dstDir)` is used to determine which files need to be copied, updated, or deleted. 
+This project uses Python standard library modules only and doesn't rely on any third party libraries. I chose `argparse` for parsing command-line options and arguments. Library `filecmp` is the key module, used for file and directory comparisons. A comparison object returned by calling `filecmp.dircmp(srcDir, dstDir)` is used to determine which files need to be copied, updated, or deleted. 
 
 Python 3.10 or newer is required, as the code uses a `match-case` statement. It can however easily be refactored to use loner `if-elif-else` statement instead.
 
@@ -19,10 +19,10 @@ Python 3.10 or newer is required, as the code uses a `match-case` statement. It 
 
 ## Features
 
-- Differential backup: This tool performs one-way synchronization from a source directory to a replica directory. It ensures that the replica directory is an exact copy of the source by copying new files, updating modified files, and deleting files that no longer exist in the source directory. This way we save resources by avoiding rewriting the whole replica directory every time.
-- Periodic synchronization: The tool can be configured to perform synchronization periodically at a specified time interval.
-- Logging: All operations performed during the backup are logged into a log file. The log file includes timestamps and details about each operation.
-- Colored CLI output: Different types of operations (e.g., copy, update, delete, warning, error) are printed in different color to make it easier to know what is happening (and how to debbug runtime errors).
+- **Differential backup**: This tool performs one-way synchronization from a source directory to a replica directory. It ensures that the replica directory is an exact copy of the source by copying new files, updating modified files, and deleting files that no longer exist in the source directory. This way we save resources by avoiding rewriting the whole replica directory every time.
+- **Periodic synchronization**: The tool can be configured to perform synchronization periodically at a specified time interval.
+- **Logging**: All operations performed during the backup are logged into a log file. The log file includes timestamps and details about each operation.
+- **Colored CLI output**: Different types of operations (copy, delete, update, warning, error) are printed in different colors to make it easier to know what is happening (and how to debug runtime errors).
 
 <img src="./tests/sourceDir/screenshot2.png" alt="Sample colored output" width="600px"/>
 
