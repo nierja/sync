@@ -13,7 +13,7 @@ Something about this project
 - TODO
 - Collored CLI printing
 
-![Sample colored output](/tests/sourceDir/screenshot.png)
+![Sample colored output](/tests/sourceDir/screenshot2.png)
 
 <!---
  <pre>
