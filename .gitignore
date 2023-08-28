@@ -9,6 +9,11 @@
 *.user
 *.userosscache
 *.sln.docstates
+replica*
+logDir
+testingSourceDir
+testingReplicaDir
+testingLogDir
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
