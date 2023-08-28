@@ -13,6 +13,8 @@ Something about this project
 - TODO
 - Collored CLI printing
 
+<img src="./tests/sourceDir/screenshot2.png" alt="Sample colored output" width="600px"/>
+
 ![Sample colored output](/tests/sourceDir/screenshot2.png)
 
 <!---
