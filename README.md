@@ -9,7 +9,7 @@ This project provides a simple differential backup tool written in Python. The t
 
 This project uses Python standard library modules only and doesn't rely on any third party libraries. I chose `argparse` for parsing command-line options and arguments. Library `filecmp` is the key module, used for file and directory comparisons. A comparison object returned by calling `filecmp.dircmp(srcDir, dstDir)` is used to determine which files need to be copied, updated, or deleted. 
 
-Python 3.10 or newer is required, as the code uses a `match-case` statement. It can however easily be refactored to use loner `if-elif-else` statement instead.
+Python 3.10 or newer is required, as the code uses a `match-case` statement. It can however easily be refactored to use a longer `if-elif-else` statement instead, if need be.
 
 ## Table of Contents
 
