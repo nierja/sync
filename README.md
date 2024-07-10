@@ -16,6 +16,7 @@ Python 3.10 or newer is required, as the code uses a `match-case` statement. It 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Dockerisation](#dockerisation)
 
 ## Features
 
@@ -80,4 +81,14 @@ options:
   --syncPeriod SYNCPERIOD
                         Time interval in seconds between periodic synchronizations
                         (backups)
+```
+
+## Dockerisation
+
+To build and run the script as a docker container, run the following in shell:
+
+```shell
+$ docker build -t sync .
+$ docker run --name run1 -d sync
+$ docker logs run1
 ```
